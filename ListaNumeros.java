@@ -1,0 +1,180 @@
+
+/**
+ * La clase representa a una lista de 
+ * números enteros
+ * 
+ * @author - 
+ * 
+ */
+import java.util.Arrays;
+
+public class ListaNumeros 
+{
+    // definir atributos
+
+    /**
+     * Constructor de la clase ListaNumeros 
+     * Crea e inicializa adecuadamente los
+     * atributos
+     * 
+     * @param n el tamaño máximo de la lista
+     */
+    public ListaNumeros(int n) {
+         
+    }
+
+    /**
+     * Añade un valor siempre al principio de la lista
+     * 
+     * @param numero el valor que se añade. No se hace nada si la lista está
+     *               completa
+     * @return true si se ha podido añadir, false en otro caso
+     */
+    public boolean addElemento(int numero) {
+        
+        
+        return true;
+
+    }
+
+    /**
+     * devuelve true si la lista está completa, false en otro caso
+     * Hacer sin if
+     */
+    public boolean estaCompleta() {
+         return true;
+
+    }
+
+    /**
+     * devuelve true si la lista está vacía, false en otro caso. 
+     * Hacer sin if
+     */
+    public boolean estaVacia() {
+         return true;
+    }
+
+    /**
+     * devuelve el nº de elementos realmente guardados en la lista
+     */
+    public int getTotalNumeros() {
+        return 0;
+
+    }
+
+    /**
+     * Vacía la lista
+     */
+    public void vaciarLista() {
+         
+    }
+    
+     /**
+     * Representación textual de la lista de la forma indicada 
+     * (leer enunciado)
+     * 
+     * Si la lista está vacía devuelve ""
+     */
+    public String toString() {
+         
+        return "";
+    }
+    
+    
+
+    /**
+     * Mostrar en pantalla la lista
+     */
+    public void escribirLista() {
+        System.out.println(this.toString());
+    }
+
+    /**
+     * Búsqueda lineal de numero en la lista
+     * @param numero el nº a buscar
+     * @return un array con las posiciones en las que se ha encontrado
+     *  
+     */
+    public int[] buscarPosicionesDe(int numero) {
+         
+        return null;
+
+    }
+
+    /**
+     * Hace una búsqueda binaria del numero indicado devolviendo -1 si no se
+     * encuentra o la posición en la que aparece
+     * 
+     * El array original lista no se modifica 
+     * Para ello crea previamente una copia
+     * de lista y trabaja con la copia
+     * 
+     * Usa exclusivamente métodos de la clase Arrays
+     * 
+     */
+    public int buscarBinario(int numero) {
+ 
+        return 0;
+
+    }
+
+   
+
+    /**
+     * borra el primer elemento de la lista
+     */
+    public void borrarPrimero() {
+         
+
+    }
+    
+     /**
+     *  Invierte cada uno de los grupos de n elementos que hay en lista
+     *  
+     *  Si el nº de elementos en lista no es divisible entre n los elementos restantes 
+     *  quedan igual
+     *  
+     *  (leer enunciado)
+     *  
+     */
+    public void invertir(int n) {
+         
+
+    }
+
+   
+  
+    /**
+     * devuelve un ragged array de 2 dimensiones con tantas filas como valores
+     * tenga el atributo lista y rellena el array de la forma indicada
+     * (leer enunciado)
+     * 
+     */
+    public int[][] toArray2D() {
+        
+        return null;
+    }
+
+    /**
+     * Punto de entrada a la aplicación 
+     * Contiene código para probar los métodos de ListaNumeros
+     */
+    public static void main(String[] args) {
+        ListaNumeros lista = new ListaNumeros(20);
+
+        System.out.println("--- addElemento() y toString() -------");
+        int[] valores = {21, -5, 6, -7, 21, -17, 21, 15, 22, 21, 77};
+        for (int i = 0; i < valores.length; i++) {
+            lista.addElemento(valores[i]);
+        }
+        System.out.println(lista.toString());
+
+        System.out.println("--- buscarPosiciones() -------");
+        int numero = 21;
+        System.out.println(lista.toString());
+        System.out.println("\t" + numero + " aparece en posiciones ");
+        // seguir completando
+         
+
+    }
+}
