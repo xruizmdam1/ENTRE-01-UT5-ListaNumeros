@@ -3,15 +3,15 @@
  * La clase representa a una lista de 
  * números enteros
  * 
- * @author - 
+ * @author - Xabier Ruiz Melero
  * 
  */
 import java.util.Arrays;
 
 public class ListaNumeros 
 {
-    // definir atributos
-
+    private int[] lista;
+    private int pos;
     /**
      * Constructor de la clase ListaNumeros 
      * Crea e inicializa adecuadamente los
@@ -20,7 +20,8 @@ public class ListaNumeros
      * @param n el tamaño máximo de la lista
      */
     public ListaNumeros(int n) {
-         
+        lista = new int[n];
+        pos = 0;
     }
 
     /**
@@ -31,10 +32,17 @@ public class ListaNumeros
      * @return true si se ha podido añadir, false en otro caso
      */
     public boolean addElemento(int numero) {
-        
-        
-        return true;
-
+        pos++;
+        if (pos < lista.length) {
+            for(int i = pos; i < pos; i++) {
+                lista[i] = numero;
+            }
+            lista[0] = numero;
+            return true;
+        }
+        else {
+            return false;
+        }
     }
 
     /**
@@ -42,8 +50,7 @@ public class ListaNumeros
      * Hacer sin if
      */
     public boolean estaCompleta() {
-         return true;
-
+        return pos == lista.length;
     }
 
     /**
@@ -51,36 +58,51 @@ public class ListaNumeros
      * Hacer sin if
      */
     public boolean estaVacia() {
-         return true;
+        return pos == 0;
     }
 
     /**
      * devuelve el nº de elementos realmente guardados en la lista
      */
     public int getTotalNumeros() {
-        return 0;
+        int total = 0;
+        int ceros = 0;
+        for(int i = 0; i < lista.length; i++) {
+            if(lista[i] != 0) {
+                total++;
+            }
+            else{
+                ceros++;
+            }
+        }
+        return total;
 
+        // O tambien se puede return pos;
     }
 
     /**
      * Vacía la lista
      */
     public void vaciarLista() {
-         
+        for(int i = 0; i < lista.length; i++) {
+            lista[i] = 0;
+            pos--;
+        }
     }
-    
-     /**
+
+    /**
      * Representación textual de la lista de la forma indicada 
      * (leer enunciado)
      * 
      * Si la lista está vacía devuelve ""
      */
     public String toString() {
-         
-        return "";
+        String toString = "";
+        for(int string = 0; string < lista.length; string++) {
+            System.out.print(string);
+        }
+        return toString;
     }
-    
-    
 
     /**
      * Mostrar en pantalla la lista
@@ -96,9 +118,26 @@ public class ListaNumeros
      *  
      */
     public int[] buscarPosicionesDe(int numero) {
-         
-        return null;
+        int length = 0;
+        int[] pos;
 
+        for(int i = 0; i < lista.length; i++) {
+            if(numero == lista[i]) {
+                length++;
+            }
+        }
+
+        pos = new int[length];
+        int contador = 0;
+
+        for(int j = 0; j < lista.length; j++) {
+            if(numero == lista[j]) {
+                pos[contador] = j;
+                contador++;
+            } 
+        }
+
+        return pos;
     }
 
     /**
@@ -113,22 +152,17 @@ public class ListaNumeros
      * 
      */
     public int buscarBinario(int numero) {
- 
         return 0;
-
     }
-
-   
 
     /**
      * borra el primer elemento de la lista
      */
     public void borrarPrimero() {
-         
 
     }
-    
-     /**
+
+    /**
      *  Invierte cada uno de los grupos de n elementos que hay en lista
      *  
      *  Si el nº de elementos en lista no es divisible entre n los elementos restantes 
@@ -138,12 +172,9 @@ public class ListaNumeros
      *  
      */
     public void invertir(int n) {
-         
 
     }
 
-   
-  
     /**
      * devuelve un ragged array de 2 dimensiones con tantas filas como valores
      * tenga el atributo lista y rellena el array de la forma indicada
@@ -151,7 +182,7 @@ public class ListaNumeros
      * 
      */
     public int[][] toArray2D() {
-        
+
         return null;
     }
 
@@ -161,7 +192,6 @@ public class ListaNumeros
      */
     public static void main(String[] args) {
         ListaNumeros lista = new ListaNumeros(20);
-
         System.out.println("--- addElemento() y toString() -------");
         int[] valores = {21, -5, 6, -7, 21, -17, 21, 15, 22, 21, 77};
         for (int i = 0; i < valores.length; i++) {
@@ -173,8 +203,9 @@ public class ListaNumeros
         int numero = 21;
         System.out.println(lista.toString());
         System.out.println("\t" + numero + " aparece en posiciones ");
-        // seguir completando
-         
-
+        
+        System.out.println("--- ToString -------");
+        lista.toString();
+        
     }
 }
