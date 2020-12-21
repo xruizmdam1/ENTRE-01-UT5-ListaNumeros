@@ -119,7 +119,7 @@ public class ListaNumeros
      */
     public int[] buscarPosicionesDe(int numero) {
         int length = 0;
-        int[] pos;
+        int[] posi = new int[pos];
 
         for(int i = 0; i < lista.length; i++) {
             if(numero == lista[i]) {
@@ -127,17 +127,16 @@ public class ListaNumeros
             }
         }
 
-        pos = new int[length];
         int contador = 0;
 
         for(int j = 0; j < lista.length; j++) {
             if(numero == lista[j]) {
-                pos[contador] = j;
+                posi[contador] = j;
                 contador++;
             } 
         }
 
-        return pos;
+        return posi;
     }
 
     /**
@@ -152,7 +151,19 @@ public class ListaNumeros
      * 
      */
     public int buscarBinario(int numero) {
-        return 0;
+        int contador = 0;
+        for(int i = 0; i < lista.length; i++) {
+            if (lista[i] == numero) {
+                contador++;
+            }
+        }
+
+        if (contador == 0) {
+            return Arrays.binarySearch(lista, numero);
+        }
+        else {
+            return contador;
+        }
     }
 
     /**
@@ -203,9 +214,8 @@ public class ListaNumeros
         int numero = 21;
         System.out.println(lista.toString());
         System.out.println("\t" + numero + " aparece en posiciones ");
-        
+
         System.out.println("--- ToString -------");
         lista.toString();
-        
     }
 }
